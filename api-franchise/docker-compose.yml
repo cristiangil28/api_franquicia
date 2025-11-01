@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_franchise
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: franchise_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin_franchise
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@local.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "8085:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api_franchise
+    restart: always
+    ports:
+      - "8001:8001"
+    environment:
+      SPRING_R2DBC_URL: r2dbc:postgresql://postgres:5432/franchise_db
+      SPRING_R2DBC_USERNAME: postgres
+      SPRING_R2DBC_PASSWORD: postgres
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+  pgadmin_data:
