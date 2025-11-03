@@ -26,11 +26,11 @@ public class FranchiseRepositoryAdapter implements FranchiseRepositoryPort {
 
     @Override
     public Mono<Franchise> save(Franchise franchise) {
-        return null;
+        return franchiseRepository.save(franchise);
     }
 
     @Override
     public Mono<Void> deleteById(Long id) {
-        return null;
+        return franchiseRepository.deleteById(id);
     }
 }

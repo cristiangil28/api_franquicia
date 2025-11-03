@@ -1,5 +1,6 @@
 package com.api.franchise.infrastructure.exception;
 
+import com.api.franchise.domain.exception.FranchiseHasBranchesException;
 import com.api.franchise.domain.exception.FranchiseNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,5 +22,16 @@ public class GlobalExceptionHandler {
         body.put("error", "Not Found");
         body.put("message", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+    }
+
+    @ExceptionHandler(FranchiseHasBranchesException.class)
+    public ResponseEntity<Map<String, Object>> handleFranchiseHasBranches(FranchiseHasBranchesException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(Map.of(
+                        "timestamp", LocalDateTime.now(),
+                        "status", 409,
+                        "error", "Franchise Has Active Branches",
+                        "message", ex.getMessage()
+                ));
     }
 }
