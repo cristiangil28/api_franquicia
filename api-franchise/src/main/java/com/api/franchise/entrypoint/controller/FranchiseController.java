@@ -20,7 +20,7 @@ public class FranchiseController {
 
     @GetMapping
     public Flux<Franchise> getFranchises(){
-        return franchiseService.getFranchies();
+        return franchiseService.getFranchises();
     }
 
     @GetMapping("/{id}")
