@@ -21,7 +21,7 @@ public class FranchiseRepositoryAdapter implements FranchiseRepositoryPort {
 
     @Override
     public Mono<Franchise> findById(Long id) {
-        return null;
+        return franchiseRepository.findById(id);
     }
 
     @Override
