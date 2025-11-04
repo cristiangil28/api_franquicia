@@ -9,5 +9,5 @@ public interface BranchRepositoryPort {
     Mono<Branch> findById(Long id);
     Mono<Branch> save(Branch branch);
     Mono<Void> deleteById(Long id);
-    Flux<Branch> findByFranchiseId(Long franchiceid);
+    Flux<Branch> findByFranchiseId(Long franchiseId);
 }

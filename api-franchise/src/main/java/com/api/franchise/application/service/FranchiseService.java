@@ -2,6 +2,7 @@ package com.api.franchise.application.service;
 
 import com.api.franchise.domain.exception.FranchiseHasBranchesException;
 import com.api.franchise.domain.exception.FranchiseNotFoundException;
+import com.api.franchise.domain.model.Franchise;
 import com.api.franchise.domain.port.BranchRepositoryPort;
 import com.api.franchise.domain.port.FranchiseRepositoryPort;
 import com.api.franchise.entrypoint.dto.request.FranchiseRequestDTO;
@@ -61,4 +62,13 @@ public class FranchiseService {
                 });
     }
 
+    public Mono<FranchiseResponseDTO> updateNameFranchise(Long id, String name){
+        return franchiseRepositoryPort.findById(id)
+                .switchIfEmpty(Mono.error(new FranchiseNotFoundException(id)))
+                .flatMap(existingFranchise -> {
+                    existingFranchise.setName(name);
+                    return franchiseRepositoryPort.save(existingFranchise);
+                })
+                .map(franchiseMapper::toResponseDto);
+    }
 }

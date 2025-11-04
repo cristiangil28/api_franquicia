@@ -1,0 +1,24 @@
+package com.api.franchise.infrastructure.persistence.repository;
+
+import com.api.franchise.domain.model.Product;
+import org.springframework.data.r2dbc.repository.Query;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
+
+@Repository
+public interface ProductRepository extends ReactiveCrudRepository<Product, Long> {
+    Flux<Product> findByBranchId(Long branchId);
+    @Query("""
+                SELECT p.*
+                FROM product p
+                JOIN branch b ON p.branch_id = b.id
+                WHERE b.franchise_id = :franchiseId
+                  AND p.stock = (
+                      SELECT MAX(p2.stock)
+                      FROM product p2
+                      WHERE p2.branch_id = p.branch_id
+                  )
+            """)
+    Flux<Product> findTopProductPerBranchByFranchise(Long franchiseId);;
+}

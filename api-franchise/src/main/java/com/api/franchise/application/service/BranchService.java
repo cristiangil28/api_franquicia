@@ -66,4 +66,14 @@ public class BranchService {
                 .flatMap(branch -> branchRepositoryPort.deleteById(id))
                 .then();
     }
+
+    public Mono<BranchResponseDTO> updateNameBranch(Long id, String name){
+        return branchRepositoryPort.findById(id)
+                .switchIfEmpty(Mono.error(new BranchNotFoundException(id)))
+                .flatMap(existingBranch -> {
+                                existingBranch.setName(name);
+                                return branchRepositoryPort.save(existingBranch);
+
+                }).map(branchMapper::toResponseDto);
+    }
 }

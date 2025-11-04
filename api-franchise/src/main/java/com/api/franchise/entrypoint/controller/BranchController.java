@@ -3,6 +3,7 @@ package com.api.franchise.entrypoint.controller;
 import com.api.franchise.application.service.BranchService;
 import com.api.franchise.entrypoint.dto.request.BranchRequestDTO;
 import com.api.franchise.entrypoint.dto.response.BranchResponseDTO;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +32,13 @@ public class BranchController {
         return branchService.updateBranch(branchRequestDTO, id);
     }
 
-    @DeleteMapping("delete-branch/{id}")
+    @DeleteMapping("/delete-branch/{id}")
     public Mono<Void> deleteBranch(@PathVariable Long id){
         return branchService.deleteBranch(id);
+    }
+
+    @PutMapping("/update-name-branch/{id}")
+    public Mono<BranchResponseDTO> updateNameBranch(@PathVariable long id, @NotBlank @RequestParam String name){
+        return branchService.updateNameBranch(id, name);
     }
 }
