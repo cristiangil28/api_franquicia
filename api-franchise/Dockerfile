@@ -1,8 +1,8 @@
 # Etapa 1: construir el JAR
 FROM eclipse-temurin:17-jdk AS builder
-WORKDIR /app/api-franchise
+WORKDIR /app//api-franchise
 COPY . .
-RUN ./api-franchise/gradlew clean bootJar --no-daemon
+RUN ./gradlew clean bootJar --no-daemon
 
 # Etapa 2: imagen ligera de ejecución
 FROM eclipse-temurin:17-jre
