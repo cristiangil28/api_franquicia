@@ -16,26 +16,26 @@ public class BranchRepositoryAdapter implements BranchRepositoryPort {
 
     @Override
     public Flux<Branch> findAll() {
-        return null;
+        return branchRepository.findAll();
     }
 
     @Override
     public Mono<Branch> findById(Long id) {
-        return null;
+        return branchRepository.findById(id);
     }
 
     @Override
     public Mono<Branch> save(Branch branch) {
-        return null;
+        return branchRepository.save(branch);
     }
 
     @Override
     public Mono<Void> deleteById(Long id) {
-        return null;
+        return branchRepository.deleteById(id);
     }
 
     @Override
-    public Flux<Branch> findByFranchiseId(Long franchiseid) {
-        return branchRepository.findByFranchiseId(franchiseid);
+    public Flux<Branch> findByFranchiseId(Long franchiseId) {
+        return branchRepository.findByFranchiseId(franchiseId);
     }
 }
