@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "e4aa6dc1-9468-4d68-ae62-49c5ce0cce22",
+		"name": "accenture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4261049",
+		"_collection_link": "https://red-station-738605.postman.co/workspace/prueba~f7aa4e97-5f15-4398-9727-dd96f8af98bf/collection/4261049-e4aa6dc1-9468-4d68-ae62-49c5ce0cce22?action=share&source=collection_link&creator=4261049"
+	},
+	"item": [
+		{
+			"name": "save-franchise",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Burguer King\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/franchises/save-franchise",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"franchises",
+						"save-franchise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-franchise",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Poblados\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/franchises/update-franchise/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"franchises",
+						"update-franchise",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "franchiseWithBranch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/franchises/1/branches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"franchises",
+						"1",
+						"branches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-franchise",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/franchises/delete-franchise/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"franchises",
+						"delete-franchise",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-branch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/branches/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"branches",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-branch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Poblado Sur\",\r\n    \"franchiseId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/branches/save-branch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"branches",
+						"save-branch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-branch",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Poblado Sur-Norte\",\r\n    \"franchiseId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/branches/update-branch/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"branches",
+						"update-branch",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-branch",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/branches/delete-branch/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"branches",
+						"delete-branch",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lapiz\",\r\n    \"stock\" : 10,\r\n    \"branchId\":6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/products/save-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"products",
+						"save-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/products/delete-product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"products",
+						"delete-product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cuaderno\",\r\n    \"stock\" : 12,\r\n    \"branchId\":6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/products/update-product/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"products",
+						"update-product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/products/update-stock/2?stock=15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"products",
+						"update-stock",
+						"2"
+					],
+					"query": [
+						{
+							"key": "stock",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/products/top-stock/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"products",
+						"top-stock",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-name-product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/products/update-name-product/2?name=Cuaderno",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"products",
+						"update-name-product",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Cuaderno"
+						},
+						{
+							"key": "",
+							"value": "'kola'",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-name-branch",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/branches/update-name-branch/6?name=Poblado Sur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"branches",
+						"update-name-branch",
+						"6"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Poblado Sur"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-name-franchise",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/franchises/update-name-franchise/1?name=Poblados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"franchises",
+						"update-name-franchise",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Poblados"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
