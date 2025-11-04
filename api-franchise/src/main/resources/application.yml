@@ -7,9 +7,9 @@ spring:
       schema-locations: classpath:schema.sql
 
   r2dbc:
-    url: ${SPRING_R2DBC_URL:r2dbc:postgresql://db:5432/franchise_db}
-    username: ${SPRING_R2DBC_USERNAME:postgres}
-    password: ${SPRING_R2DBC_PASSWORD:postgres}
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
 
 server:
   port: 8001
