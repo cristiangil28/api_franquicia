@@ -2,7 +2,7 @@
 FROM eclipse-temurin:17-jdk AS builder
 WORKDIR /app
 COPY . .
-RUN ./gradlew clean bootJar --no-daemon
+RUN ./api-franchise/gradlew clean bootJar --no-daemon
 
 # Etapa 2: imagen ligera de ejecución
 FROM eclipse-temurin:17-jre
