@@ -61,4 +61,5 @@ en la raíz del proyecto hay un archivo llamado endpoints.json el cual puede ser
 
 en la raíz del proyecto ejecutar en las terminal el siguiente comando:  ./gradlew test
 
-
+### 5. URL render
+https://api-franquicia.onrender.com/
